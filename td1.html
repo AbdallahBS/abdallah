@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h4>Exercice 3</h4>
+  <h3>Choisissez votre dessert préféré</h3><hr>
+  <label for="apple"> <input type="radio" name="dessert" id="apple" value="Tarte aux pommes">Tarte aux pommes</label><br>
+  <label for="strawberry"> <input type="radio" name="dessert" id="strawberry" value="Charlotte au fraises">Charlotte au fraises</label><br>
+  <label for="chocolate"> <input type="radio" name="dessert" id="chocolate" value="Mousse au chocolat">Mousse au chocolat</label><br><br>
+  <div class="btn">
+    <button onclick="check()">Choisissez</button>
+    <button type="reset">Effacer</button>
+  </div>
+  <script>
+    function check() {
+      const btns = document.getElementsByName("dessert");
+      for (const radioButton of btns) {
+        if (radioButton.checked) {
+          const selectedValue = radioButton.value;
+          console.log(selectedValue);
+          document.getElementById("result").textContent = selectedValue;
+          break;
+        }
+      }
+    }
+    function change(){
+      console.log("hii")
+      document.querySelector("img").src="img2.jpg";
+    }
+  </script>
+  <div id="result"></div>
+  <h4>exercie 4</h4>
+  <img src="img1.jpg" alt="img" onmouseover="change()">
+</body>
+</html>
